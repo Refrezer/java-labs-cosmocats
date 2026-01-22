@@ -1,0 +1,89 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: denis
+      changes:
+        # --- Таблиця Категорій ---
+        - createSequence:
+            sequenceName: categories_id_seq
+            incrementBy: 1
+        - createTable:
+            tableName: categories
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  defaultValueComputed: nextval('categories_id_seq')
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+                    unique: true
+              - column:
+                  name: description
+                  type: varchar(500)
+
+        # --- Таблиця Продуктів ---
+        - createSequence:
+            sequenceName: products_id_seq
+            incrementBy: 1
+        - createTable:
+            tableName: products
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  defaultValueComputed: nextval('products_id_seq')
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: description
+                  type: varchar(500)
+              - column:
+                  name: price
+                  type: decimal(19, 2)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: category_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_product_category
+                    references: categories(id)
+
+        # --- Таблиця Замовлень (Orders) ---
+        - createSequence:
+            sequenceName: orders_id_seq
+            incrementBy: 1
+        - createTable:
+            tableName: orders
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  defaultValueComputed: nextval('orders_id_seq')
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: order_number
+                  type: varchar(50)
+                  constraints:
+                    nullable: false
+                    unique: true
+              - column:
+                  name: created_at
+                  type: timestamp
+              - column:
+                  name: customer_email
+                  type: varchar(255)
