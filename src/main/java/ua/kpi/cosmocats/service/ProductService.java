@@ -1,6 +1,7 @@
 package ua.kpi.cosmocats.service;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.access.prepost.PreAuthorize; // ⚠️ Новий імпорт для безпеки
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ua.kpi.cosmocats.entity.Category;
@@ -19,6 +20,10 @@ public class ProductService {
     private final ProductRepository productRepository;
     private final CategoryRepository categoryRepository;
 
+    // 🔥 ДОДАНО БЕЗПЕКУ:
+    // Тільки юзер з роллю API_USER (наш API Key) АБО токеном з правами 'write' може викликати цей метод.
+    // Якщо прав немає — буде помилка 403 Forbidden.
+    @PreAuthorize("hasAuthority('ROLE_API_USER') or hasAuthority('SCOPE_write')")
     @Transactional
     public Product createProduct(String name, BigDecimal price, Long categoryId) {
         Category category = categoryRepository.findById(categoryId)
@@ -32,12 +37,14 @@ public class ProductService {
         return productRepository.save(product);
     }
 
-    // Использование кастомного запроса на "дешевые товары"
+    // Інші методи залишаємо відкритими (або теж можна захистити, якщо треба)
+
+    // Використання кастомного запиту на "дешеві товари"
     public List<Product> findCheapProducts(BigDecimal maxPrice) {
         return productRepository.findCheapProducts(maxPrice);
     }
 
-    // Тот самый метод для "Интергалактического комитета" (Projection)
+    // Той самий метод для "Інтергалактичного комітету" (Projection)
     public List<ProductReportProjection> getCorporateReport() {
         return productRepository.getTopExpensiveProducts();
     }
