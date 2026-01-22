@@ -1,0 +1,54 @@
+[33m52b7a43[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mlab3-db[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/lab2-aop[m[33m, [m[1;32mmain[m[33m, [m[1;32mlab2-aop[m[33m)[m HEAD@{0}: checkout: moving from lab2 to lab3-db
+[33m9678cb2[m[33m ([m[1;31morigin/lab2[m[33m, [m[1;32mlab2[m[33m)[m HEAD@{1}: checkout: moving from lab2 to lab2
+[33m9678cb2[m[33m ([m[1;31morigin/lab2[m[33m, [m[1;32mlab2[m[33m)[m HEAD@{2}: checkout: moving from lab2-aop to lab2
+[33m52b7a43[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mlab3-db[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/lab2-aop[m[33m, [m[1;32mmain[m[33m, [m[1;32mlab2-aop[m[33m)[m HEAD@{3}: checkout: moving from main to lab2-aop
+[33m52b7a43[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mlab3-db[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/lab2-aop[m[33m, [m[1;32mmain[m[33m, [m[1;32mlab2-aop[m[33m)[m HEAD@{4}: checkout: moving from main to main
+[33m52b7a43[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mlab3-db[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/lab2-aop[m[33m, [m[1;32mmain[m[33m, [m[1;32mlab2-aop[m[33m)[m HEAD@{5}: checkout: moving from lab3-db to main
+[33m52b7a43[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mlab3-db[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/lab2-aop[m[33m, [m[1;32mmain[m[33m, [m[1;32mlab2-aop[m[33m)[m HEAD@{6}: checkout: moving from main to lab3-db
+[33m52b7a43[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mlab3-db[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/lab2-aop[m[33m, [m[1;32mmain[m[33m, [m[1;32mlab2-aop[m[33m)[m HEAD@{7}: merge lab2-aop: Fast-forward
+[33me3dbcca[m HEAD@{8}: checkout: moving from lab2-aop to main
+[33m52b7a43[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mlab3-db[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/lab2-aop[m[33m, [m[1;32mmain[m[33m, [m[1;32mlab2-aop[m[33m)[m HEAD@{9}: commit: Done Lab 2: Implemented Feature Toggles via AOP
+[33m9678cb2[m[33m ([m[1;31morigin/lab2[m[33m, [m[1;32mlab2[m[33m)[m HEAD@{10}: checkout: moving from lab2 to lab2-aop
+[33m9678cb2[m[33m ([m[1;31morigin/lab2[m[33m, [m[1;32mlab2[m[33m)[m HEAD@{11}: checkout: moving from lab2-aop to lab2
+[33mac897f6[m[33m ([m[1;31morigin/lab1[m[33m, [m[1;32mlab1[m[33m)[m HEAD@{12}: checkout: moving from lab1 to lab2-aop
+[33mac897f6[m[33m ([m[1;31morigin/lab1[m[33m, [m[1;32mlab1[m[33m)[m HEAD@{13}: checkout: moving from main to lab1
+[33me3dbcca[m HEAD@{14}: checkout: moving from lab1 to main
+[33mac897f6[m[33m ([m[1;31morigin/lab1[m[33m, [m[1;32mlab1[m[33m)[m HEAD@{15}: checkout: moving from main to lab1
+[33me3dbcca[m HEAD@{16}: checkout: moving from lab2 to main
+[33m9678cb2[m[33m ([m[1;31morigin/lab2[m[33m, [m[1;32mlab2[m[33m)[m HEAD@{17}: checkout: moving from lab1 to lab2
+[33mac897f6[m[33m ([m[1;31morigin/lab1[m[33m, [m[1;32mlab1[m[33m)[m HEAD@{18}: checkout: moving from lab2-aop to lab1
+[33me3dbcca[m HEAD@{19}: checkout: moving from lab2 to lab2-AOP
+[33m9678cb2[m[33m ([m[1;31morigin/lab2[m[33m, [m[1;32mlab2[m[33m)[m HEAD@{20}: checkout: moving from main to lab2
+[33me3dbcca[m HEAD@{21}: checkout: moving from main to main
+[33me3dbcca[m HEAD@{22}: checkout: moving from lab2-aop to main
+[33me3dbcca[m HEAD@{23}: checkout: moving from lab2-aop to lab2-aop
+[33me3dbcca[m HEAD@{24}: checkout: moving from lab2-aot to lab2-aop
+[33m9678cb2[m[33m ([m[1;31morigin/lab2[m[33m, [m[1;32mlab2[m[33m)[m HEAD@{25}: checkout: moving from lab2 to lab2-aot
+[33m9678cb2[m[33m ([m[1;31morigin/lab2[m[33m, [m[1;32mlab2[m[33m)[m HEAD@{26}: checkout: moving from lab2-aop to lab2
+[33me3dbcca[m HEAD@{27}: checkout: moving from lab1 to lab2-aop
+[33mac897f6[m[33m ([m[1;31morigin/lab1[m[33m, [m[1;32mlab1[m[33m)[m HEAD@{28}: checkout: moving from lab2-aop to lab1
+[33me3dbcca[m HEAD@{29}: checkout: moving from main to lab2-aop
+[33me3dbcca[m HEAD@{30}: checkout: moving from lab2-aop to main
+[33me3dbcca[m HEAD@{31}: checkout: moving from main to lab2-aop
+[33me3dbcca[m HEAD@{32}: checkout: moving from lab2-aop to main
+[33me3dbcca[m HEAD@{33}: checkout: moving from main to lab2-aop
+[33me3dbcca[m HEAD@{34}: checkout: moving from main to main
+[33me3dbcca[m HEAD@{35}: checkout: moving from lab2-aop to main
+[33me3dbcca[m HEAD@{36}: checkout: moving from main to lab2-aop
+[33me3dbcca[m HEAD@{37}: checkout: moving from lab2-aop to main
+[33me3dbcca[m HEAD@{38}: checkout: moving from main to lab2-aop
+[33me3dbcca[m HEAD@{39}: checkout: moving from main to main
+[33me3dbcca[m HEAD@{40}: checkout: moving from lab2-aop to main
+[33me3dbcca[m HEAD@{41}: checkout: moving from main to lab2-aop
+[33me3dbcca[m HEAD@{42}: checkout: moving from lab2 to main
+[33m9678cb2[m[33m ([m[1;31morigin/lab2[m[33m, [m[1;32mlab2[m[33m)[m HEAD@{43}: commit: Lab 1.2: Added Unit and Integration tests with WireMock and Jacoco
+[33mac897f6[m[33m ([m[1;31morigin/lab1[m[33m, [m[1;32mlab1[m[33m)[m HEAD@{44}: checkout: moving from lab1 to lab2
+[33mac897f6[m[33m ([m[1;31morigin/lab1[m[33m, [m[1;32mlab1[m[33m)[m HEAD@{45}: checkout: moving from lab1 to lab1
+[33mac897f6[m[33m ([m[1;31morigin/lab1[m[33m, [m[1;32mlab1[m[33m)[m HEAD@{46}: commit: Lab 1 implementation: API, Services, WireMock
+[33me3dbcca[m HEAD@{47}: reset: moving to main
+[33me9f7d6e[m HEAD@{48}: checkout: moving from main to lab1
+[33me3dbcca[m HEAD@{49}: Branch: renamed refs/heads/new-main to refs/heads/main
+[33me3dbcca[m HEAD@{51}: commit (initial): Initial commit
+[33me9f7d6e[m HEAD@{52}: checkout: moving from lab1 to main
+[33me9f7d6e[m HEAD@{53}: checkout: moving from main to lab1
+[33me9f7d6e[m HEAD@{54}: commit (initial): Initial project structure

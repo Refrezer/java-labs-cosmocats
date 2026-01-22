@@ -2,47 +2,43 @@ package ua.kpi.cosmocats.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import ua.kpi.cosmocats.client.ExchangeRateClient;
-import ua.kpi.cosmocats.domain.Product;
+import org.springframework.transaction.annotation.Transactional;
+import ua.kpi.cosmocats.entity.Category;
+import ua.kpi.cosmocats.entity.Product;
+import ua.kpi.cosmocats.repository.CategoryRepository;
+import ua.kpi.cosmocats.repository.ProductReportProjection;
+import ua.kpi.cosmocats.repository.ProductRepository;
 
 import java.math.BigDecimal;
-import java.util.*;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.atomic.AtomicLong;
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
 public class ProductService {
 
-    private final Map<Long, Product> mockDb = new ConcurrentHashMap<>();
-    private final AtomicLong idGenerator = new AtomicLong(1);
-    private final ExchangeRateClient exchangeRateClient;
+    private final ProductRepository productRepository;
+    private final CategoryRepository categoryRepository;
 
-    public Product save(Product product) {
-        if (product.getId() == null) {
-            product.setId(idGenerator.getAndIncrement());
-        }
+    @Transactional
+    public Product createProduct(String name, BigDecimal price, Long categoryId) {
+        Category category = categoryRepository.findById(categoryId)
+                .orElseThrow(() -> new RuntimeException("Category not found"));
 
-        System.out.println(">>> СЕРВІС: Починаємо збереження продукту...");
+        Product product = new Product();
+        product.setName(name);
+        product.setPrice(price);
+        product.setCategory(category);
 
-        // Викликаємо клієнт
-        BigDecimal rate = exchangeRateClient.getExchangeRate();
-        System.out.println(">>> СЕРВІС: Курс отриманий від клієнта: " + rate);
-
-        if (product.getPrice() != null && rate != null) {
-            BigDecimal credits = product.getPrice().multiply(rate);
-            product.setPriceInCredits(credits);
-            System.out.println(">>> СЕРВІС: Перерахована ціна: " + credits);
-        } else {
-            System.out.println(">>> СЕРВІС: Перерахунок не вдався (ціна або курс null)");
-        }
-
-        mockDb.put(product.getId(), product);
-        return product;
+        return productRepository.save(product);
     }
 
-    // ... інші методи (findAll і т.д.) залиш як були
-    public List<Product> findAll() { return new ArrayList<>(mockDb.values()); }
-    public Optional<Product> findById(Long id) { return Optional.ofNullable(mockDb.get(id)); }
-    public boolean deleteById(Long id) { return mockDb.remove(id) != null; }
+    // Использование кастомного запроса на "дешевые товары"
+    public List<Product> findCheapProducts(BigDecimal maxPrice) {
+        return productRepository.findCheapProducts(maxPrice);
+    }
+
+    // Тот самый метод для "Интергалактического комитета" (Projection)
+    public List<ProductReportProjection> getCorporateReport() {
+        return productRepository.getTopExpensiveProducts();
+    }
 }

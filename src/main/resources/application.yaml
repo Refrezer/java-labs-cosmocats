@@ -2,8 +2,20 @@ spring:
   application:
     name: cosmo-cats
 
-# Наши фича-тогглы
-feature:
-  toggles:
-    cosmo-cats: true       # Включено
-    kitty-products: false  # Выключено (будет ошибка)
+  # Настройки базы H2 (чтобы работало без установки Postgres)
+  datasource:
+    url: jdbc:h2:mem:cosmodb
+    driverClassName: org.h2.Driver
+    username: sa
+    password:
+
+  # Настройки Hibernate
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+
+  # Консоль H2 (чтобы можно было зайти в базу через браузер)
+  h2:
+    console:
+      enabled: true
