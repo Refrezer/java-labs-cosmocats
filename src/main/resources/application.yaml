@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: cosmo-cats
+
+# Наши фича-тогглы
+feature:
+  toggles:
+    cosmo-cats: true       # Включено
+    kitty-products: false  # Выключено (будет ошибка)
