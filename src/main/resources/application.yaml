@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: cosmo-cats
+
+  # --- Налаштування бази H2 ---
+  datasource:
+    url: jdbc:h2:mem:cosmodb
+    driverClassName: org.h2.Driver
+    username: sa
+    password:
+
+  # --- Налаштування Hibernate ---
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+
+  # --- Консоль H2 (http://localhost:8080/h2-console) ---
+  h2:
+    console:
+      enabled: true
+
+  # --- !!! НОВЕ ДЛЯ ЛР4 (SECURITY) !!! ---
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          # Фейкова адреса сервера авторизації.
+          # Це потрібно, щоб Spring Security запустився і не лаявся на відсутність провайдера.
+          # В реальному проекті тут було б посилання на Auth0 або Keycloak.
+          issuer-uri: http://localhost:8080/realms/cosmo-cats
